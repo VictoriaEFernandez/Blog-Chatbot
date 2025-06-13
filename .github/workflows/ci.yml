@@ -7,7 +7,7 @@ on:
       - 'feature/*'
 
 jobs:
-  php-lint:
+  php-lint-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,8 +17,12 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'   # O la versión que uses
+          php-version: '8.1'
 
       - name: Validate PHP syntax
         run: |
           find . -name "*.php" -exec php -l {} \;
+
+      - name: Run basic tests
+        run: |
+          php tests/SimpleTest.php
