@@ -33,10 +33,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login - Panel de Administración</title>
-    <link rel="stylesheet" href="styles/styles.css"> 
+    <link rel="stylesheet" href="styles/styles.css" />
 </head>
 
 <body class="fondo-login">
@@ -53,6 +53,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </header>
 
     <main>
+        <!-- Aquí insertamos el iframe -->
+        <iframe src="http://127.0.0.1:5000" width="100%" height="600" style="border:none;">
+            Tu navegador no soporta iframes.
+        </iframe>
+
         <div class="login-container">
             <h2>Iniciar Sesión</h2>
             <!-- Mostrar mensaje de error si las credenciales son incorrectas -->
@@ -61,11 +66,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php endif; ?>
             <form action="login.php" method="POST">
                 <label for="username">Usuario:</label>
-                <input type="text" name="username" id="username" required>
-                <br>
+                <input type="text" name="username" id="username" required />
+                <br />
                 <label for="password">Contraseña:</label>
-                <input type="password" name="password" id="password" required>
-                <br>
+                <input type="password" name="password" id="password" required />
+                <br />
                 <button type="submit">Ingresar</button>
             </form>
         </div>
