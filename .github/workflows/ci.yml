@@ -1,0 +1,24 @@
+name: PHP CI Pipeline
+
+on:
+  push:
+    branches:
+      - develop
+      - 'feature/*'
+
+jobs:
+  php-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'   # O la versión que uses
+
+      - name: Validate PHP syntax
+        run: |
+          find . -name "*.php" -exec php -l {} \;
