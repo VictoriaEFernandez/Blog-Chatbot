@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'php/conexion.php';
-
+include 'php/chatbot_widget.php'; 
 // Verificamos si el usuario ha iniciado sesión
 if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
     header("Location: login.php");
@@ -85,6 +85,7 @@ while ($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <title>Panel de Administración</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/chat.css">
 </head>
 <body>
 
@@ -214,7 +215,7 @@ while ($row = $result->fetch_assoc()) {
 </main>
 
 <script src="js/confirmacionEliminarReceta.js"></script>
-
+<script src="js/chat.js"></script>
 </body>
 </html>
 

@@ -17,8 +17,9 @@ if (!$result) { // Comprobamos si el resultado de la consulta es falso (error)
 <head>
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Nutricionista Lara</title> 
+    <title>Nutricionista Lara - Recetas</title> 
     <link rel="stylesheet" href="styles/styles.css">  
+    <link rel="stylesheet" href="styles/chat.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  
 </head>
 
@@ -79,6 +80,10 @@ if (!$result) { // Comprobamos si el resultado de la consulta es falso (error)
         <p>&copy; 2024 Nutricionista Lara. Todos los derechos reservados.</p>  
     </footer>
 
+    <!-- Incluir el chatbot AQUÍ, después del HTML -->
+    <?php include 'php/chatbot_widget.php'; ?>
+
+    <script src="js/chat.js"></script>
 </body>
 
 </html>
